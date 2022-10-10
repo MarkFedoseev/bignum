@@ -32,11 +32,16 @@ initialyzes a ```bigint``` from ```int``` with a sign (default sigh is +)
 positive sgn argument for positive sigh, negative - for negative
 
 ```
+bigint(const vector<int>& vec, char sgn = 1, char rev = 1);
+```
+initialyzes a ```bigint``` from ```std::vector<int>``` with a sign (default sigh is +)
+
+```rev``` argument by default equals ```1```, which means string will be parsed naturally (right number will be parsed with lesser exponent). Class stores numbers reversed
+
+```
 bigint(const string& num, int rev = 1);
 ```
 initialyzes a positive ```bigint``` from ```string``` with a **space** as delimiter
-
-```rev``` argument by default equals ```1```, which means string will be parsed naturally (right number will be parsed with lesser exponent). Class stores numbers reversed
 
 ## Getting numbers:
 Here are method's prototypes allows you to get a number stored in class
@@ -166,3 +171,9 @@ std::cout << (bi2 <= bi3);  //output: 1
 std::cout << (bi2 >= bi3);  //output: 1
 std::cout << (bi2 == bi3);  //output: 1
 ```
+
+### opposite value
+```
+bigint operator - (const bigint& bi);
+```
+returns opposite ```bigint``` (number whit opposite sign)
